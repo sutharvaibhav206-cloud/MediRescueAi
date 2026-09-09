@@ -27,3 +27,5 @@ mobile/build/
 mobile/.dart_tool/
 mobile/.flutter-plugins
 mobile/.flutter-plugin-dependencies
+
+.vercel
