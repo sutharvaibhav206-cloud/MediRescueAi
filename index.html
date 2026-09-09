@@ -2,10 +2,208 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=web/index.html">
-  <title>MediRescue AI - Redirecting...</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MediRescue AI – Emergency First-Aid Assistant</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body { background-color: #f4f7f6; font-family: 'Segoe UI', system-ui, sans-serif; color: #1e293b; }
+    .header-bar { background-color: #006a60; color: white; padding: 15px 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
+    .emergency-banner { background-color: #d32f2f; color: white; border-radius: 14px; padding: 18px; margin: 20px 0; box-shadow: 0 4px 12px rgba(211,47,47,0.3); }
+    .action-card { background: white; border-radius: 16px; padding: 18px; border: 1px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0,0,0,0.05); transition: transform 0.2s, box-shadow 0.2s; cursor: pointer; height: 100%; position: relative; }
+    .action-card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); border-color: #006a60; }
+    .card-icon { width: 48px; height: 48px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 12px; }
+    .card-badge { position: absolute; top: 14px; right: 14px; font-size: 10px; font-weight: 800; padding: 3px 8px; border-radius: 6px; text-transform: uppercase; }
+    .chip { display: inline-block; padding: 6px 14px; border-radius: 20px; background: #e0f2f1; color: #006a60; font-size: 13px; font-weight: 600; margin: 4px; cursor: pointer; border: 1.5px solid #b2dfdb; user-select: none; }
+    .chip.active { background: #006a60; color: white; border-color: #006a60; }
+    .result-box { background: white; border-radius: 16px; padding: 20px; margin-top: 20px; box-shadow: 0 4px 16px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; }
+    .emergency-cat-card { background-color: #334155; color: white; border-radius: 14px; padding: 16px 10px; text-align: center; cursor: pointer; border: 1.5px solid rgba(239, 68, 68, 0.4); transition: all 0.2s; height: 100%; }
+    .emergency-cat-card:hover { background-color: #1e293b; border-color: #ef4444; transform: translateY(-3px); }
+    .disclaimer-box { background-color: #fff8e1; border: 1px solid #ffe082; border-radius: 12px; padding: 12px; color: #5d4037; font-size: 12px; line-height: 1.5; margin-top: 16px; }
+  </style>
 </head>
 <body>
-  <p>Redirecting to <a href="web/index.html">MediRescue AI Web Application</a>...</p>
+
+  <!-- Top Header Bar -->
+  <div class="header-bar d-flex justify-content-between align-items-center">
+    <div class="d-flex align-items-center">
+      <i class="bi bi-shield-plus fs-2 me-2"></i>
+      <div>
+        <h5 class="m-0 fw-bold">MediRescue AI</h5>
+        <small class="opacity-75" style="font-size: 11px;">Immediate Guidance. Safer Decisions.</small>
+      </div>
+    </div>
+    <div class="d-flex align-items-center gap-2">
+      <span id="backendStatusBadge" class="badge bg-success py-2 px-3">Backend Live (FastAPI & ML)</span>
+      <a href="tel:112" class="btn btn-danger btn-sm fw-bold">
+        <i class="bi bi-telephone-fill me-1"></i> EMERGENCY (112)
+      </a>
+    </div>
+  </div>
+
+  <div class="container py-3">
+
+    <!-- Emergency Warning Banner -->
+    <div class="emergency-banner">
+      <div class="d-flex align-items-center mb-2">
+        <i class="bi bi-exclamation-triangle-fill fs-3 me-2"></i>
+        <h6 class="m-0 fw-bold tracking-wide">EMERGENCY WARNING</h6>
+      </div>
+      <p class="small mb-3">IF THIS IS A LIFE-THREATENING EMERGENCY, CONTACT LOCAL EMERGENCY SERVICES IMMEDIATELY.</p>
+      <a href="tel:112" class="btn btn-light text-danger fw-bold btn-sm"><i class="bi bi-telephone-outbound me-1"></i> CALL 112 IMMEDIATELY</a>
+    </div>
+
+    <!-- Quick Action Dashboard -->
+    <h5 class="fw-bold mb-3" style="color: #004d40;">Quick Action Dashboard</h5>
+    
+    <div class="row g-3 mb-4">
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="action-card" onclick="scrollToSection('symptomSection')">
+          <span class="card-badge bg-teal text-white" style="background:#006a60;">AI</span>
+          <div class="card-icon bg-danger-subtle text-danger"><i class="bi bi-activity"></i></div>
+          <h6 class="fw-bold mb-1">Check Symptoms</h6>
+          <small class="text-muted">AI Condition Check</small>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="action-card" onclick="scrollToSection('emergencySection')">
+          <span class="card-badge bg-danger text-white">URGENT</span>
+          <div class="card-icon bg-warning-subtle text-warning"><i class="bi bi-exclamation-octagon-fill"></i></div>
+          <h6 class="fw-bold mb-1">Emergency Mode</h6>
+          <small class="text-muted">12+ Step Categories</small>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="action-card" onclick="scrollToSection('firstAidSection')">
+          <span class="card-badge bg-success text-white">GUIDE</span>
+          <div class="card-icon" style="background:#e0f2f1; color:#006a60;"><i class="bi bi-bandaid"></i></div>
+          <h6 class="fw-bold mb-1">First-Aid Guide</h6>
+          <small class="text-muted">Search Procedures</small>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="action-card" onclick="scrollToSection('medicineSection')">
+          <span class="card-badge bg-info text-white">DATA</span>
+          <div class="card-icon bg-info-subtle text-info"><i class="bi bi-capsule"></i></div>
+          <h6 class="fw-bold mb-1">Medicine Info</h6>
+          <small class="text-muted">Uses & Warnings</small>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="action-card" onclick="scrollToSection('hospitalSection')">
+          <span class="card-badge bg-primary text-white">GPS</span>
+          <div class="card-icon bg-success-subtle text-success"><i class="bi bi-geo-alt-fill"></i></div>
+          <h6 class="fw-bold mb-1">Find Hospitals</h6>
+          <small class="text-muted">Nearby ER Clinics</small>
+        </div>
+      </div>
+      <div class="col-6 col-md-4 col-lg-2">
+        <div class="action-card" onclick="scrollToSection('contactsSection')">
+          <span class="card-badge bg-warning text-dark">CALL</span>
+          <div class="card-icon bg-primary-subtle text-primary"><i class="bi bi-telephone-fill"></i></div>
+          <h6 class="fw-bold mb-1">Contacts</h6>
+          <small class="text-muted">Emergency Hotline</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- 1. AI Symptom Checker Section -->
+    <div id="symptomSection" class="result-box mb-4">
+      <h5 class="fw-bold mb-3" style="color: #004d40;"><i class="bi bi-cpu me-2"></i>AI Symptom Checker</h5>
+      
+      <div class="mb-3">
+        <label class="form-label fw-semibold">Describe your symptoms in simple words:</label>
+        <textarea id="symptomInput" class="form-control" rows="3" placeholder="e.g. 'I have high fever, severe headache and body pain for 2 days...'"></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label fw-semibold">Or select quick symptom chips:</label>
+        <div>
+          <span class="chip" onclick="toggleChip(this)">Fever</span>
+          <span class="chip" onclick="toggleChip(this)">Headache</span>
+          <span class="chip" onclick="toggleChip(this)">Chest Pain</span>
+          <span class="chip" onclick="toggleChip(this)">Breathing Issue</span>
+          <span class="chip" onclick="toggleChip(this)">Cough</span>
+          <span class="chip" onclick="toggleChip(this)">Skin Rash</span>
+          <span class="chip" onclick="toggleChip(this)">Burn</span>
+          <span class="chip" onclick="toggleChip(this)">Minor Cut</span>
+          <span class="chip" onclick="toggleChip(this)">Dizziness</span>
+          <span class="chip" onclick="toggleChip(this)">Vomiting</span>
+          <span class="chip" onclick="toggleChip(this)">Sprain</span>
+          <span class="chip" onclick="toggleChip(this)">Insect Bite</span>
+        </div>
+      </div>
+
+      <button id="analyzeBtn" class="btn text-white w-100 fw-bold py-2" style="background-color: #006a60;" onclick="analyzeSymptoms()">
+        <i class="bi bi-magic me-1"></i> Analyze Symptoms with AI
+      </button>
+
+      <div id="analysisResult" class="mt-4" style="display: none;"></div>
+    </div>
+
+    <!-- 2. Emergency Assistance Mode Section -->
+    <div id="emergencySection" class="result-box bg-dark text-white mb-4" style="background-color:#1e293b !important;">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h5 class="fw-bold text-danger m-0"><i class="bi bi-exclamation-octagon-fill me-2"></i>Emergency Assistance Mode</h5>
+        <a href="tel:112" class="btn btn-danger btn-sm fw-bold"><i class="bi bi-telephone-fill me-1"></i> DIAL 112</a>
+      </div>
+      <p class="text-white-50 small mb-3">Select an emergency category below for immediate step-by-step instructions, DOs, DON'Ts, and emergency warnings.</p>
+
+      <div id="emergencyCategoryGrid" class="row g-3"></div>
+      <div id="emergencyDetailBox" class="mt-3" style="display: none;"></div>
+    </div>
+
+    <!-- 3. First Aid Knowledge Base Section -->
+    <div id="firstAidSection" class="result-box mb-4">
+      <h5 class="fw-bold mb-3" style="color: #004d40;"><i class="bi bi-journal-medical me-2"></i>First-Aid Knowledge Base</h5>
+      <input type="text" id="firstAidSearch" class="form-control mb-3" placeholder="Search first aid guides (e.g. burn, fracture, choking)..." oninput="loadFirstAid()">
+      <div id="firstAidContainer"></div>
+    </div>
+
+    <!-- 4. Medicines Database Section -->
+    <div id="medicineSection" class="result-box mb-4">
+      <h5 class="fw-bold mb-3" style="color: #004d40;"><i class="bi bi-capsule me-2"></i>Medicine Database</h5>
+      <input type="text" id="medicineSearch" class="form-control mb-3" placeholder="Search medicine (e.g. Paracetamol, ORS, Betadine, Volini)..." oninput="loadMedicines()">
+      <div id="medicineContainer"></div>
+    </div>
+
+    <!-- 5. Find Hospitals Section -->
+    <div id="hospitalSection" class="result-box mb-4">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h5 class="fw-bold m-0" style="color: #004d40;"><i class="bi bi-geo-alt-fill me-2"></i>Find Nearby Hospitals & Clinics</h5>
+        <button class="btn btn-success btn-sm fw-bold" onclick="locateNearbyHospitals()"><i class="bi bi-crosshair me-1"></i> Use GPS Location</button>
+      </div>
+      <p id="hospitalStatus" class="text-muted small mb-3">Click "Use GPS Location" to search health facilities relative to your position.</p>
+      <div id="hospitalContainer"></div>
+    </div>
+
+    <!-- 6. Emergency Contacts Section -->
+    <div id="contactsSection" class="result-box mb-4">
+      <h5 class="fw-bold mb-3" style="color: #004d40;"><i class="bi bi-telephone-fill me-2"></i>Emergency Contacts</h5>
+      
+      <div class="card bg-danger text-white border-0 rounded-4 p-4 text-center mb-4">
+        <h6 class="text-white-50 fw-bold">NATIONAL EMERGENCY HOTLINE</h6>
+        <h1 class="display-3 fw-black my-1">112</h1>
+        <div><a href="tel:112" class="btn btn-light text-danger fw-bold btn-lg px-4 mt-2"><i class="bi bi-telephone-fill me-1"></i> CALL HOTLINE (112) NOW</a></div>
+      </div>
+
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <h6 class="fw-bold m-0 text-dark">Personal Emergency Contacts</h6>
+        <button class="btn btn-outline-primary btn-sm fw-bold" onclick="addPersonalContact()"><i class="bi bi-person-plus-fill me-1"></i> Add Contact</button>
+      </div>
+
+      <div id="contactsContainer"></div>
+    </div>
+
+    <div class="disclaimer-box mb-4">
+      <strong>IMPORTANT MEDICAL DISCLAIMER:</strong> MediRescue AI is an emergency information and first-aid guidance tool, NOT a doctor or replacement for professional medical care. Never claim that a medicine will "cure" a disease without professional medical advice.
+    </div>
+
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>
