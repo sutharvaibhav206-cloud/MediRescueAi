@@ -9,11 +9,17 @@ from app.config import HOST, PORT
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # Startup
-    await db_manager.connect()
+    # Startup - safely connect or fallback
+    try:
+        await db_manager.connect()
+    except Exception as e:
+        print(f"Lifespan DB connection warning: {e}")
     yield
     # Shutdown
-    await db_manager.close()
+    try:
+        await db_manager.close()
+    except Exception:
+        pass
 
 app = FastAPI(
     title="MediRescue AI - Emergency First-Aid Assistant API",
@@ -31,21 +37,21 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Include API routers FIRST
-app.include_router(health.router, prefix="/api", tags=["Health"])
-app.include_router(conditions.router, prefix="/api", tags=["Conditions"])
-app.include_router(first_aid.router, prefix="/api", tags=["First Aid"])
-app.include_router(medicines.router, prefix="/api", tags=["Medicines"])
-app.include_router(symptom_check.router, prefix="/api", tags=["Symptom Checker"])
+# Include API routers with both /api prefix and root for Vercel Serverless Function rewrites
+routers = [health.router, conditions.router, first_aid.router, medicines.router, symptom_check.router]
+for router in routers:
+    app.include_router(router, prefix="/api", tags=["API"])
+    app.include_router(router, tags=["Root API"])
 
-# Mount static web directory at root / so all HTML/CSS/JS files load seamlessly
-current_file_dir = os.path.dirname(__file__)  # backend/app
-backend_dir = os.path.dirname(current_file_dir)  # backend
-project_root = os.path.dirname(backend_dir)  # MediRescueAI
-web_dir = os.path.join(project_root, "web")
+# Mount static web directory locally (disabled on Vercel to avoid route collisions)
+if not os.environ.get("VERCEL"):
+    current_file_dir = os.path.dirname(__file__)  # backend/app
+    backend_dir = os.path.dirname(current_file_dir)  # backend
+    project_root = os.path.dirname(backend_dir)  # MediRescueAI
+    web_dir = os.path.join(project_root, "web")
 
-if os.path.exists(web_dir):
-    app.mount("/", StaticFiles(directory=web_dir, html=True), name="web")
+    if os.path.exists(web_dir):
+        app.mount("/", StaticFiles(directory=web_dir, html=True), name="web")
 
 if __name__ == "__main__":
     import uvicorn
