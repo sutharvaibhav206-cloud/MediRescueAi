@@ -1,0 +1,87 @@
+[
+  {
+    "name": "Minor Cut / Wound",
+    "symptoms": ["skin laceration", "bleeding", "minor pain", "redness"],
+    "severity": "Mild",
+    "first_aid": [
+      "Wash hands thoroughly with soap and water before touching the wound.",
+      "Apply gentle direct pressure with a clean cloth or bandage until bleeding stops.",
+      "Clean the wound under running tap water; clean surrounding skin with mild soap.",
+      "Apply a thin layer of over-the-counter antiseptic ointment if available.",
+      "Cover the wound with a sterile adhesive bandage or sterile dressing."
+    ],
+    "do_not": [
+      "Do NOT blow on the open wound.",
+      "Do NOT use harsh chemicals like hydrogen peroxide or full-strength alcohol directly inside open wound.",
+      "Do NOT remove embedded deep foreign objects yourself."
+    ],
+    "warning_signs": [
+      "Bleeding does not stop after 10 minutes of direct pressure",
+      "Wound is deep, gaping, or caused by rusty metal or animal bite",
+      "Pus, increasing redness, swelling, or throbbing pain develops later"
+    ],
+    "medicine_information": [
+      {
+        "name": "Antiseptic Cream / Ointment",
+        "purpose": "Helps prevent bacterial skin infection on minor cuts",
+        "warning": "For external skin use only. Discontinue if rash or irritation occurs."
+      }
+    ]
+  },
+  {
+    "name": "Thermal Burn (Minor)",
+    "symptoms": ["red skin", "pain", "minor swelling", "small blisters"],
+    "severity": "Moderate",
+    "first_aid": [
+      "Immediately cool the burn under cool running tap water for 10-15 minutes.",
+      "Remove rings or tight items from the burned area before swelling starts.",
+      "Apply aloe vera gel or burn ointment after cooling.",
+      "Cover loosely with a clean, sterile non-stick bandage."
+    ],
+    "do_not": [
+      "Do NOT apply ice, ice water, butter, oil, or toothpastes to the burn.",
+      "Do NOT break or pop blisters.",
+      "Do NOT use fluffy cotton balls that can stick to the burn."
+    ],
+    "warning_signs": [
+      "Burn covers face, hands, groin, or major joint",
+      "Burn area appears charred, black, or white",
+      "Signs of severe infection or fever develop"
+    ],
+    "medicine_information": [
+      {
+        "name": "Aloe Vera Gel / Burn Ointment",
+        "purpose": "Soothes skin and provides moisture to minor burns",
+        "warning": "External application only. Seek medical help for deep burns."
+      }
+    ]
+  },
+  {
+    "name": "Viral Fever",
+    "symptoms": ["high temperature", "body pain", "headache", "chills", "fatigue"],
+    "severity": "Moderate",
+    "first_aid": [
+      "Rest adequately in a comfortable, well-ventilated room.",
+      "Drink plenty of fluids (water, clear broths, oral rehydration solution).",
+      "Use a cool damp cloth on forehead for comfort if temperature is high.",
+      "Wear light, breathable clothing."
+    ],
+    "do_not": [
+      "Do NOT take antibiotics without explicit prescription from a registered physician.",
+      "Do NOT bundle up in heavy blankets if shivering with high fever.",
+      "Do NOT give aspirin to children or teenagers."
+    ],
+    "warning_signs": [
+      "Fever exceeds 103°F (39.4°C) or lasts more than 3 days",
+      "Severe headache, neck stiffness, or confusion",
+      "Difficulty breathing or persistent chest discomfort"
+    ],
+    "medicine_information": [
+      {
+        "name": "Paracetamol (Acetaminophen)",
+        "purpose": "Temporary relief of mild-to-moderate fever and body pain",
+        "warning": "Do not exceed maximum daily limit. Consult doctor before taking if liver conditions exist."
+      }
+    ]
+  }
+]

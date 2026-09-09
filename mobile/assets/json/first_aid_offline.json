@@ -1,0 +1,204 @@
+[
+  {
+    "category": "Injuries",
+    "title": "Fracture & Bone Injury",
+    "what_happened": "A bone is cracked or broken due to trauma, fall, or high impact.",
+    "immediate_first_aid": [
+      "Keep the injured area completely still and immobilized.",
+      "Do NOT attempt to push back a protruding bone or realign the limb.",
+      "Apply an ice pack wrapped in a cloth to reduce swelling without pressing hard.",
+      "If trained, apply a temporary splint above and below the fracture site."
+    ],
+    "do_list": [
+      "Keep the victim calm and warm.",
+      "Support the injured limb in the position found.",
+      "Call emergency medical services immediately."
+    ],
+    "dont_list": [
+      "Do NOT move the person if spinal or neck injury is suspected.",
+      "Do NOT test the limb by trying to walk or bend it.",
+      "Do NOT give food or drink in case emergency surgery is needed."
+    ],
+    "when_to_seek_help": [
+      "Bone is visible through torn skin (open fracture)",
+      "Limb is numb, pale, or blue at extremities",
+      "Severe unbearable pain or inability to move"
+    ],
+    "icon": "bone"
+  },
+  {
+    "category": "Burns",
+    "title": "Thermal & Chemical Burns",
+    "what_happened": "Skin damage caused by heat, fire, hot liquid, steam, or corrosive chemical contact.",
+    "immediate_first_aid": [
+      "Cool burn under cool running tap water for 10-20 minutes.",
+      "For chemical burns, flush continuously with water for at least 20 minutes.",
+      "Remove jewelry or constricting items before swelling occurs.",
+      "Cover loosely with a clean, non-stick sterile bandage."
+    ],
+    "do_list": [
+      "FLUSH continuously with water.",
+      "Protect burned area from dirt and contamination.",
+      "Seek urgent medical advice for major burns."
+    ],
+    "dont_list": [
+      "Do NOT apply ice, butter, grease, toothpaste, or oil.",
+      "Do NOT pop blisters.",
+      "Do NOT peel off clothing stuck to burned skin."
+    ],
+    "when_to_seek_help": [
+      "Burn is larger than 3 inches in diameter",
+      "Burn is on face, hands, feet, groin, or major joint",
+      "Burn is caused by chemicals or electrical source"
+    ],
+    "icon": "local_fire_department"
+  },
+  {
+    "category": "Bleeding",
+    "title": "Severe External Bleeding",
+    "what_happened": "Deep cut or vascular laceration resulting in rapid blood loss.",
+    "immediate_first_aid": [
+      "Apply direct, firm pressure on wound with a sterile gauze or clean cloth.",
+      "Maintain pressure continuously without lifting the cloth to check.",
+      "If blood soaks through, add another cloth on top.",
+      "Elevate wound above heart level if safe.",
+      "Call emergency services immediately."
+    ],
+    "do_list": [
+      "Use sterile gloves or clean barrier if available.",
+      "Keep victim lying down and quiet.",
+      "Monitor breathing and consciousness."
+    ],
+    "dont_list": [
+      "Do NOT remove original soaked cloth bandage.",
+      "Do NOT apply tourniquet unless trained and direct pressure fails."
+    ],
+    "when_to_seek_help": [
+      "Blood is spurting from wound",
+      "Bleeding does not stop after 10 minutes of direct pressure",
+      "Victim feels faint, dizzy, or shows signs of shock"
+    ],
+    "icon": "water_drop"
+  },
+  {
+    "category": "Breathing emergencies",
+    "title": "Choking & Airway Obstruction",
+    "what_happened": "Food or foreign object blocks the trachea, preventing airflow.",
+    "immediate_first_aid": [
+      "If person CANNOT cough, speak, or breathe:",
+      "Give 5 sharp back blows between shoulder blades with heel of hand.",
+      "Give 5 abdominal thrusts (Heimlich maneuver): Stand behind, wrap arms around waist, place fist above navel, thrust upward and inward.",
+      "Repeat cycle until object is dislodged or person becomes unconscious.",
+      "Call emergency services immediately."
+    ],
+    "do_list": [
+      "Act immediately; choking can cause brain damage within minutes.",
+      "Begin CPR compressions if person collapses."
+    ],
+    "dont_list": [
+      "Do NOT perform abdominal thrusts on infants under 1 year (use chest thrusts).",
+      "Do NOT slap back while person is standing upright without leaning forward."
+    ],
+    "when_to_seek_help": [
+      "Choking obstruction is not dislodged immediately",
+      "Person becomes unresponsive or turns blue"
+    ],
+    "icon": "air"
+  },
+  {
+    "category": "Heat-related problems",
+    "title": "Heat Stroke & Exhaustion",
+    "what_happened": "Overheating of the body due to high ambient temperatures and dehydration.",
+    "immediate_first_aid": [
+      "Move person to a cool, shaded or air-conditioned room.",
+      "Remove excess or tight clothing.",
+      "Cool person rapidly: apply ice packs to armpits, groin, and neck, or spray with cool water.",
+      "Give small sips of cool water or electrolyte drink if conscious."
+    ],
+    "do_list": [
+      "Fan the person while dampening skin.",
+      "Monitor body temperature.",
+      "Call emergency services if confusion or high fever is present."
+    ],
+    "dont_list": [
+      "Do NOT give fluids if person is confused or vomiting.",
+      "Do NOT give aspirin or paracetamol for heat stroke."
+    ],
+    "when_to_seek_help": [
+      "Body temperature reaches 104°F (40°C) or higher",
+      "Confusion, agitation, slurred speech, or seizures occur"
+    ],
+    "icon": "thermostat"
+  },
+  {
+    "category": "Allergic reactions",
+    "title": "Anaphylactic Shock",
+    "what_happened": "Severe life-threatening allergic reaction to food, venom, or medicine.",
+    "immediate_first_aid": [
+      "Call emergency services immediately.",
+      "If person has a prescribed epinephrine auto-injector (EpiPen), assist them in using it on outer mid-thigh.",
+      "Have person lie flat on back with feet elevated.",
+      "If breathing is difficult, allow them to sit up."
+    ],
+    "do_list": [
+      "Stay with person continuously.",
+      "Be prepared to give second dose of epinephrine after 5-15 minutes if symptoms persist."
+    ],
+    "dont_list": [
+      "Do NOT place pillow under head if breathing is difficult.",
+      "Do NOT delay calling emergency services even if EpiPen was given."
+    ],
+    "when_to_seek_help": [
+      "Swelling of lips/throat, wheezing, or loss of consciousness"
+    ],
+    "icon": "warning"
+  },
+  {
+    "category": "Bites and stings",
+    "title": "Snake Bite & Animal Bite",
+    "what_happened": "Puncture wound or envenomation from snake, dog, or wild animal.",
+    "immediate_first_aid": [
+      "Keep victim calm and still to slow venom spread.",
+      "Remove tight clothing, rings, or watch near the bite area.",
+      "Clean wound gently with soap and water.",
+      "Immobilize the bitten limb at or slightly below heart level.",
+      "Transport victim to nearest hospital emergency room immediately."
+    ],
+    "do_list": [
+      "Note the snake's appearance (color, pattern) from a safe distance.",
+      "Seek anti-venom medical treatment urgently."
+    ],
+    "dont_list": [
+      "Do NOT cut into the bite wound or suck out venom.",
+      "Do NOT apply tourniquet or ice packs to snake bite."
+    ],
+    "when_to_seek_help": [
+      "All snake bites require immediate hospital emergency evaluation!"
+    ],
+    "icon": "bug_report"
+  },
+  {
+    "category": "Common illnesses",
+    "title": "High Fever & Convulsions",
+    "what_happened": "Spike in body temperature causing febrile seizure or distress.",
+    "immediate_first_aid": [
+      "Place person on their side in a recovery position.",
+      "Clear area around them to prevent injury.",
+      "Apply cool sponge bath on forehead and neck.",
+      "Administer oral rehydration fluids when fully conscious."
+    ],
+    "do_list": [
+      "Keep track of time seizure lasts.",
+      "Consult a pediatrician/doctor for fever evaluation."
+    ],
+    "dont_list": [
+      "Do NOT restrain person during seizure.",
+      "Do NOT put anything into their mouth."
+    ],
+    "when_to_seek_help": [
+      "Seizure lasts longer than 5 minutes",
+      "Fever exceeds 103°F or is accompanied by stiff neck"
+    ],
+    "icon": "health_and_safety"
+  }
+]

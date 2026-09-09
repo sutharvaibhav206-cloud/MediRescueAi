@@ -1,0 +1,29 @@
+symptom_text,condition,severity
+"high temperature fever body pain headache chills sweating weakness",Viral Fever,Moderate
+"fever headache joint pain muscle ache shivering fatigue",Viral Fever,Moderate
+"throbbing headache pain behind eyes sensitivity to light nausea dizziness",Tension Headache / Migraine,Mild
+"sharp pain on one side of head neck stiffness fatigue headache",Tension Headache / Migraine,Mild
+"bleeding skin laceration sharp pain blood flowing minor cut knife scratch",Minor Cut / Wound,Mild
+"cut on finger bleeding small wound abrasion skin tear",Minor Cut / Wound,Mild
+"skin red painful burning sensation blister scald hot water steam touching stove",Thermal Burn (Minor),Moderate
+"fire burn skin redness pain small blisters hot fluid splash",Thermal Burn (Minor),Moderate
+"dry mouth extreme thirst dark yellow urine dizziness confusion low energy fatigue",Dehydration / Heat Exhaustion,Moderate
+"feeling faint sweating profusely high heat sun exposure dark urine thirst",Dehydration / Heat Exhaustion,Moderate
+"stomach cramps nausea vomiting watery diarrhea feeling sick stomach upset food poisoning",Gastroenteritis / Food Poisoning,Moderate
+"vomiting diarrhea stomach pain after eating abdominal cramps fever",Gastroenteritis / Food Poisoning,Moderate
+"swollen ankle twisted foot joint pain inability to bear weight sprain bruising",Joint Sprain / Ligament Injury,Mild
+"knee pain swelling after twist sprain wrist joint tenderness",Joint Sprain / Ligament Injury,Mild
+"sneezing watery eyes itchy nose skin rash hives mild swelling allergy",Minor Allergic Reaction,Mild
+"skin itching red spots allergic rash sneezing hives congestion",Minor Allergic Reaction,Mild
+"bleeding from nose blood dripping down nostril dry air nose trauma",Nosebleed (Epistaxis),Mild
+"nose bleed bleeding nostril nose picking facial impact",Nosebleed (Epistaxis),Mild
+"wasp sting bee bite sharp pain localized redness swelling itching insect bite",Insect Bite / Sting,Mild
+"mosquito bite spider bite skin red bump itching localized pain",Insect Bite / Sting,Mild
+"inability to clear throat cough choking obstruction food stuck coughing struggling",Choking (Airway Obstruction),Severe
+"gasping for air food stuck in throat silent coughing turn blue choking",Choking (Airway Obstruction),Severe
+"passing out collapse loss of consciousness pale skin weak pulse black out fainting",Fainting (Syncope),Moderate
+"dizzy lightheaded collapse temporary blackout fainting episode",Fainting (Syncope),Moderate
+"wheezing shortness of breath chest tightness cough asthma attack gasping for air",Asthma Attack / Bronchospasm,Moderate
+"difficulty breathing wheezing tightness in chest asthmatic flare up",Asthma Attack / Bronchospasm,Moderate
+"crushing chest pain pressure radiating to left arm jaw sweating shortness of breath",Cardiac Distress (Possible Heart Attack),Severe
+"severe chest pain cold sweat pain down left arm dizziness breathlessness",Cardiac Distress (Possible Heart Attack),Severe

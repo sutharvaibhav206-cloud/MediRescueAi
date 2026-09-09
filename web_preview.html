@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MediRescue AI - Live App Web Preview</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+  <style>
+    body { background-color: #f4f7f6; font-family: 'Segoe UI', system-ui, sans-serif; }
+    .header-bar { background-color: #006a60; color: white; padding: 15px 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    .emergency-banner { background-color: #d32f2f; color: white; border-radius: 14px; padding: 18px; margin: 20px 0; box-shadow: 0 4px 12px rgba(211,47,47,0.3); }
+    .action-card { background: white; border-radius: 16px; padding: 18px; border: none; box-shadow: 0 4px 12px rgba(0,0,0,0.05); transition: transform 0.2s, box-shadow 0.2s; cursor: pointer; height: 100%; }
+    .action-card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.1); }
+    .card-icon { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 12px; }
+    .chip { display: inline-block; padding: 6px 14px; border-radius: 20px; background: #e0f2f1; color: #006a60; font-size: 13px; font-weight: 600; margin: 4px; cursor: pointer; border: 1px solid #b2dfdb; }
+    .chip.active { background: #006a60; color: white; }
+    .result-box { background: white; border-radius: 16px; padding: 20px; margin-top: 20px; box-shadow: 0 4px 16px rgba(0,0,0,0.06); }
+    .badge-emergency { background-color: #b71c1c; color: white; padding: 4px 10px; border-radius: 8px; font-weight: bold; font-size: 12px; }
+  </style>
+</head>
+<body>
+
+  <div class="header-bar d-flex justify-content-between align-items-center">
+    <div class="d-flex align-items-center">
+      <i class="bi bi-shield-plus fs-2 me-2"></i>
+      <div>
+        <h5 class="m-0 fw-bold">MediRescue AI</h5>
+        <small class="opacity-75">Immediate Guidance. Safer Decisions.</small>
+      </div>
+    </div>
+    <button class="btn btn-danger btn-sm fw-bold" onclick="showEmergencyModal()">
+      <i class="bi bi-telephone-fill me-1"></i> EMERGENCY (112)
+    </button>
+  </div>
+
+  <div class="container py-3">
+
+    <!-- Emergency Warning Banner -->
+    <div class="emergency-banner">
+      <div class="d-flex align-items-center mb-2">
+        <i class="bi bi-exclamation-triangle-fill fs-3 me-2"></i>
+        <h6 class="m-0 fw-bold tracking-wide">EMERGENCY WARNING</h6>
+      </div>
+      <p class="small mb-3">IF THIS IS A LIFE-THREATENING EMERGENCY, CONTACT LOCAL EMERGENCY SERVICES IMMEDIATELY.</p>
+      <a href="tel:112" class="btn btn-light text-danger fw-bold btn-sm"><i class="bi bi-telephone-outbound me-1"></i> CALL 112 IMMEDIATELY</a>
+    </div>
+
+    <h5 class="fw-bold text-teal mb-3" style="color: #004d40;">Quick Action Dashboard</h5>
+    
+    <div class="row g-3 mb-4">
+      <div class="col-6 col-md-4">
+        <div class="action-card" onclick="scrollToSection('symptomSection')">
+          <div class="card-icon bg-danger-subtle text-danger"><i class="bi bi-activity"></i></div>
+          <h6 class="fw-bold mb-1">Check Symptoms</h6>
+          <small class="text-muted">AI Medical Check</small>
+        </div>
+      </div>
+      <div class="col-6 col-md-4">
+        <div class="action-card" onclick="scrollToSection('firstAidSection')">
+          <div class="card-icon bg-teal-subtle text-teal" style="background:#e0f2f1; color:#006a60;"><i class="bi bi-bandaid"></i></div>
+          <h6 class="fw-bold mb-1">First-Aid Guide</h6>
+          <small class="text-muted">Search Guides</small>
+        </div>
+      </div>
+      <div class="col-6 col-md-4">
+        <div class="action-card" onclick="scrollToSection('medicineSection')">
+          <div class="card-icon bg-info-subtle text-info"><i class="bi bi-capsule"></i></div>
+          <h6 class="fw-bold mb-1">Medicine Info</h6>
+          <small class="text-muted">Uses & Safety</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI Symptom Checker Section -->
+    <div id="symptomSection" class="result-box mb-4">
+      <h5 class="fw-bold mb-3" style="color: #004d40;"><i class="bi bi-cpu me-2"></i>AI Symptom Checker</h5>
+      
+      <div class="mb-3">
+        <label class="form-label fw-semibold">Describe your symptoms in simple words:</label>
+        <textarea id="symptomInput" class="form-control" rows="3" placeholder="e.g. I have fever, headache and body pain for 2 days..."></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label fw-semibold">Or select quick symptom chips:</label>
+        <div>
+          <span class="chip" onclick="toggleChip(this)">Fever</span>
+          <span class="chip" onclick="toggleChip(this)">Headache</span>
+          <span class="chip" onclick="toggleChip(this)">Chest Pain</span>
+          <span class="chip" onclick="toggleChip(this)">Breathing Issue</span>
+          <span class="chip" onclick="toggleChip(this)">Burn</span>
+          <span class="chip" onclick="toggleChip(this)">Minor Cut</span>
+          <span class="chip" onclick="toggleChip(this)">Dizziness</span>
+          <span class="chip" onclick="toggleChip(this)">Vomiting</span>
+        </div>
+      </div>
+
+      <button id="analyzeBtn" class="btn btn-teal text-white w-100 fw-bold py-2" style="background-color: #006a60;" onclick="analyzeSymptoms()">
+        <i class="bi bi-magic me-1"></i> Analyze Symptoms with AI
+      </button>
+
+      <div id="analysisResult" class="mt-4" style="display: none;"></div>
+    </div>
+
+    <!-- First Aid Section -->
+    <div id="firstAidSection" class="result-box mb-4">
+      <h5 class="fw-bold mb-3" style="color: #004d40;"><i class="bi bi-journal-medical me-2"></i>First-Aid Knowledge Base</h5>
+      <input type="text" id="firstAidSearch" class="form-control mb-3" placeholder="Search first aid guides (e.g. burn, fracture, choking)..." oninput="loadFirstAid()">
+      <div id="firstAidContainer"></div>
+    </div>
+
+    <!-- Medicines Section -->
+    <div id="medicineSection" class="result-box mb-4">
+      <h5 class="fw-bold mb-3" style="color: #004d40;"><i class="bi bi-capsule me-2"></i>Medicine Database</h5>
+      <input type="text" id="medicineSearch" class="form-control mb-3" placeholder="Search medicine (e.g. Paracetamol, ORS)..." oninput="loadMedicines()">
+      <div id="medicineContainer"></div>
+    </div>
+
+  </div>
+
+  <script>
+    const API_BASE = "http://127.0.0.1:8000/api";
+
+    function toggleChip(el) {
+      el.classList.toggle('active');
+    }
+
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+
+    async function analyzeSymptoms() {
+      const text = document.getElementById('symptomInput').value;
+      const selectedChips = Array.from(document.querySelectorAll('.chip.active')).map(c => c.innerText);
+
+      if (!text && selectedChips.length === 0) {
+        alert("Please enter a description or select symptom chips.");
+        return;
+      }
+
+      const btn = document.getElementById('analyzeBtn');
+      btn.innerHTML = `<span class="spinner-border spinner-border-sm me-2"></span>Analyzing...`;
+      btn.disabled = true;
+
+      try {
+        const res = await fetch(`${API_BASE}/symptom-check`, {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({ symptoms_text: text, selected_symptoms: selectedChips })
+        });
+        const data = await res.json();
+        renderResult(data);
+      } catch (err) {
+        alert("Make sure backend Python server is running on http://127.0.0.1:8000!");
+      } finally {
+        btn.innerHTML = `<i class="bi bi-magic me-1"></i> Analyze Symptoms with AI`;
+        btn.disabled = false;
+      }
+    }
+
+    function renderResult(data) {
+      const resBox = document.getElementById('analysisResult');
+      resBox.style.display = 'block';
+
+      if (data.is_emergency) {
+        resBox.innerHTML = `
+          <div class="alert alert-danger shadow-sm border-2 border-danger">
+            <h5 class="fw-bold"><i class="bi bi-exclamation-octagon-fill me-2"></i>${data.emergency_warning}</h5>
+            <p class="mb-2">${data.recommendation}</p>
+            <a href="tel:112" class="btn btn-danger fw-bold"><i class="bi bi-telephone-fill me-1"></i> CALL EMERGENCY 112 NOW</a>
+          </div>
+        `;
+        return;
+      }
+
+      let condHtml = data.possible_conditions.map(c => `
+        <div class="mb-2">
+          <div class="d-flex justify-content-between font-weight-bold">
+            <span class="fw-bold">${c.name}</span>
+            <span class="text-teal fw-bold">${Math.round(c.confidence * 100)}% Match</span>
+          </div>
+          <div class="progress" style="height: 8px;">
+            <div class="progress-bar" style="width: ${c.confidence * 100}%; background-color: #006a60;"></div>
+          </div>
+        </div>
+      `).join('');
+
+      let stepsHtml = data.first_aid.map((step, idx) => `
+        <li class="list-group-item d-flex align-items-start">
+          <span class="badge bg-teal rounded-circle me-2" style="background:#006a60;">${idx+1}</span>
+          <div>${step}</div>
+        </li>
+      `).join('');
+
+      resBox.innerHTML = `
+        <div class="card border-0 shadow-sm">
+          <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <h6 class="fw-bold m-0" style="color:#004d40;">Possible Condition Assessment</h6>
+              <span class="badge bg-warning text-dark">Severity: ${data.severity}</span>
+            </div>
+            ${condHtml}
+            <h6 class="fw-bold mt-4 mb-2" style="color:#004d40;">Immediate First-Aid Actions:</h6>
+            <ul class="list-group list-group-flush mb-3">${stepsHtml}</ul>
+            <div class="alert alert-warning small mb-0"><i class="bi bi-info-circle me-1"></i>${data.disclaimer}</div>
+          </div>
+        </div>
+      `;
+    }
+
+    async function loadFirstAid() {
+      const q = document.getElementById('firstAidSearch').value;
+      try {
+        const res = await fetch(`${API_BASE}/first-aid`);
+        const data = await res.json();
+        const filtered = data.filter(d => d.title.toLowerCase().includes(q.toLowerCase()) || d.category.toLowerCase().includes(q.toLowerCase()));
+        
+        document.getElementById('firstAidContainer').innerHTML = filtered.map(g => `
+          <div class="card mb-2 border-0 bg-light">
+            <div class="card-body">
+              <h6 class="fw-bold text-dark mb-1">${g.title} <small class="text-muted">(${g.category})</small></h6>
+              <p class="small text-muted mb-2">${g.what_happened}</p>
+              <ol class="small mb-0 ps-3">
+                ${g.immediate_first_aid.map(s => `<li>${s}</li>`).join('')}
+              </ol>
+            </div>
+          </div>
+        `).join('');
+      } catch(e) {}
+    }
+
+    async function loadMedicines() {
+      const q = document.getElementById('medicineSearch').value;
+      try {
+        const res = await fetch(`${API_BASE}/medicines?q=${encodeURIComponent(q)}`);
+        const data = await res.json();
+        
+        document.getElementById('medicineContainer').innerHTML = data.map(m => `
+          <div class="card mb-2 border-0 bg-light">
+            <div class="card-body">
+              <h6 class="fw-bold text-primary mb-1">${m.name}</h6>
+              <p class="small mb-1"><strong>Purpose:</strong> ${m.purpose}</p>
+              <p class="small text-danger mb-0"><strong>Warning:</strong> ${m.important_warnings.join(' ')}</p>
+            </div>
+          </div>
+        `).join('');
+      } catch(e) {}
+    }
+
+    // Initial loads
+    loadFirstAid();
+    loadMedicines();
+  </script>
+
+</body>
+</html>
