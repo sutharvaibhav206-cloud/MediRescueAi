@@ -8,9 +8,13 @@ env/
 venv/
 ENV/
 .venv
+.python-version
+pyproject.toml
+uv.lock
 
 # Vercel
 .vercel/
+.vercel
 
 # IDE & OS
 .vscode/
@@ -27,5 +31,3 @@ mobile/build/
 mobile/.dart_tool/
 mobile/.flutter-plugins
 mobile/.flutter-plugin-dependencies
-
-.vercel
