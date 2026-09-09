@@ -411,7 +411,6 @@ function renderFacilities(coords) {
   const userLat = coords ? coords.latitude : 28.6139;
   const userLng = coords ? coords.longitude : 77.2090;
 
-  // Compute nearby facilities with relative GPS offset or exact locations
   const rawFacilities = [
     { 
       name: "City General Hospital & 24x7 Emergency Trauma Center", 
@@ -428,6 +427,22 @@ function renderFacilities(coords) {
       phone: "112", 
       lat: userLat - 0.012, 
       lng: userLng + 0.010 
+    },
+    { 
+      name: "Apex Children's Emergency & Pediatric Hospital", 
+      type: "Pediatric ER & Child Care", 
+      address: "88 Children Health Lane, Block B", 
+      phone: "+91 11 2658 8500", 
+      lat: userLat + 0.004, 
+      lng: userLng - 0.008 
+    },
+    { 
+      name: "Max Super Specialty Trauma & Heart Institute", 
+      type: "Super Specialty Cardiac & ER", 
+      address: "Ring Road Medical Hub, Gate 2", 
+      phone: "+91 11 4055 4055", 
+      lat: userLat - 0.009, 
+      lng: userLng - 0.011 
     },
     { 
       name: "Red Cross Urgent Care Community Health Center", 

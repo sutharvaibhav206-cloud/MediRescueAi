@@ -465,6 +465,231 @@ const OFFLINE_DATA = {
         "Acute ulcerative colitis or bacterial enterocolitis"
       ],
       disclaimer: "Consult a doctor immediately if diarrhea persists longer than 48 hours."
+    },
+    {
+      name: "Ondansetron (Emeset / Vomikind 4mg)",
+      purpose: "Anti-Emetic (Anti-Vomiting & Anti-Nausea)",
+      common_uses: [
+        "Prevention and control of severe nausea and vomiting",
+        "Gastroenteritis nausea management"
+      ],
+      important_warnings: [
+        "Take strictly under guidance for persistent vomiting.",
+        "May cause mild headache or constipation."
+      ],
+      contraindications: [
+        "Concurrent use of Apomorphine",
+        "Known hypersensitivity to ondansetron"
+      ],
+      disclaimer: "Consult a doctor if vomiting persists past 12 hours or causes dehydration."
+    },
+    {
+      name: "Dicyclomine + Paracetamol (Cyclopam / Spasmo-Proxyvon)",
+      purpose: "Anti-Spasmodic & Analgesic Pain Relief",
+      common_uses: [
+        "Relief of acute spasmodic abdominal cramps",
+        "Intestinal colic and menstrual cramps"
+      ],
+      important_warnings: [
+        "May cause mild dry mouth or blurred vision.",
+        "Take after food with a glass of water."
+      ],
+      contraindications: [
+        "Glaucoma, severe ulcerative colitis, or urinary retention"
+      ],
+      disclaimer: "Consult a physician for acute severe abdominal pain."
+    },
+    {
+      name: "Domperidone (VomiStop / Motinorm)",
+      purpose: "Prokinetic Anti-Nausea Medication",
+      common_uses: [
+        "Relief of indigestion, stomach fullness, and bloating",
+        "Nausea associated with acid reflux"
+      ],
+      important_warnings: [
+        "Take 15-30 minutes before meals.",
+        "Avoid long-term continuous use without medical advice."
+      ],
+      contraindications: [
+        "Gastrointestinal hemorrhage or obstruction"
+      ],
+      disclaimer: "Take as directed for indigestion and nausea."
+    },
+    {
+      name: "Activated Charcoal (Charcocaps / Carbosorb)",
+      purpose: "Emergency Adsorbent for Accidental Toxin Ingestion",
+      common_uses: [
+        "Emergency first-aid adsorption of ingested poisons and drug overdose",
+        "Reducing intestinal gas and bloating"
+      ],
+      important_warnings: [
+        "Must be administered as early as possible after accidental ingestion.",
+        "Do NOT give to an unconscious victim."
+      ],
+      contraindications: [
+        "Ingestion of corrosive acids, alkalis, or petroleum distillates"
+      ],
+      disclaimer: "Call Poison Control or Emergency Hotline (112) IMMEDIATELY for poisoning!"
+    },
+    {
+      name: "Eye Lubricant Drops (Tear Drops / Refresho Saline)",
+      purpose: "Ophthalmic Lubricant & Dust Cleanser",
+      common_uses: [
+        "Relief of dry, burning, or irritated eyes",
+        "Flushing out dust or minor foreign particles from eyes"
+      ],
+      important_warnings: [
+        "Do not touch dropper tip to eye or skin surface to prevent contamination.",
+        "Discontinue if eye pain or vision changes occur."
+      ],
+      contraindications: [
+        "Known hypersensitivity to eye drop ingredients"
+      ],
+      disclaimer: "For mild eye dryness. Seek urgent care for chemical splashes or eye trauma."
+    },
+    {
+      name: "Ear Wax Softening Drops (Waxsolve / Soluwax)",
+      purpose: "Cerumenolytic Ear Wax Softener",
+      common_uses: [
+        "Softening and loosening hard impacted ear wax",
+        "Relief of ear fullness due to ear wax blockage"
+      ],
+      important_warnings: [
+        "Instill 3-5 drops into ear canal while lying on side for 5 minutes.",
+        "Do NOT use if ear drum perforation or active ear infection is suspected."
+      ],
+      contraindications: [
+        "Perforated eardrum, ear discharge, or recent ear surgery"
+      ],
+      disclaimer: "Consult an ENT specialist for persistent ear pain or severe hearing blockage."
+    },
+    {
+      name: "Vitamin C (Celin 500 / Chewable Ascorbic Acid)",
+      purpose: "Nutritional Immune Support & Antioxidant",
+      common_uses: [
+        "Supporting immune recovery during viral cold and fever",
+        "Promoting collagen synthesis and wound tissue healing"
+      ],
+      important_warnings: [
+        "Chew or swallow after meals.",
+        "Maintain adequate fluid intake."
+      ],
+      contraindications: [
+        "Hyperoxaluria or severe kidney stone history"
+      ],
+      disclaimer: "Dietary vitamin supplement."
+    },
+    {
+      name: "Zinc Sulfate (Zinconia 50mg / Zinc Chewable)",
+      purpose: "Essential Mineral Immune & Diarrhea Recovery Support",
+      common_uses: [
+        "Shortening duration of viral cold and diarrhea symptoms",
+        "Supporting skin barrier repair and immunity"
+      ],
+      important_warnings: [
+        "Take with food to prevent mild nausea.",
+        "Do not exceed daily recommended intake."
+      ],
+      contraindications: [
+        "Severe renal impairment"
+      ],
+      disclaimer: "Nutritional mineral supplement."
+    },
+    {
+      name: "Glucose Powder (Dabur Glucose-D / Enerzal)",
+      purpose: "Rapid Carbohydrate Energy & Hydration Powder",
+      common_uses: [
+        "Instant energy boost during physical exhaustion or heat fatigue",
+        "First-aid management of conscious mild hypoglycemia (low blood sugar)"
+      ],
+      important_warnings: [
+        "Mix 2-3 spoonfuls in a glass of water.",
+        "Monitor blood sugar levels closely in diabetic individuals."
+      ],
+      contraindications: [
+        "Uncontrolled hyperglycemia or severe diabetes without monitoring"
+      ],
+      disclaimer: "Instant energy drink for heat exhaustion and low blood sugar emergency."
+    },
+    {
+      name: "Hydrogen Peroxide 3% Solution",
+      purpose: "Topical Antiseptic Cleanser & Debriding Agent",
+      common_uses: [
+        "Flushing dirt and debris from dirty superficial abrasions",
+        "Foaming cleanser for minor cut first-aid"
+      ],
+      important_warnings: [
+        "Use diluted with clean water for superficial skin wounds.",
+        "Do not use on deep open cavity wounds."
+      ],
+      contraindications: [
+        "Deep puncture wounds or animal bites"
+      ],
+      disclaimer: "External topical antiseptic cleanser."
+    },
+    {
+      name: "Strepsils / Vicks Throat Lozenges",
+      purpose: "Topical Throat Anesthetic & Antibacterial Lozenge",
+      common_uses: [
+        "Relief of painful sore throat, dry cough tickle, and pharyngitis",
+        "Soothes inflamed throat tissues"
+      ],
+      important_warnings: [
+        "Dissolve lozenge slowly in mouth every 2-3 hours.",
+        "Do not swallow whole."
+      ],
+      contraindications: [
+        "Children under 6 years of age"
+      ],
+      disclaimer: "Sore throat soothing lozenge."
+    },
+    {
+      name: "Crepe Elastic Bandage (4 inch / 10cm)",
+      purpose: "Compression Splint & Joint Immobilizer",
+      common_uses: [
+        "Compressing joint sprains and muscle strains to reduce swelling",
+        "Securing ice packs and temporary wound dressings"
+      ],
+      important_warnings: [
+        "Wrap firmly from distal to proximal direction, but NOT overly tight.",
+        "Check toes/fingers frequently for numbness, coldness, or blueness."
+      ],
+      contraindications: [
+        "Severe arterial peripheral vascular disease"
+      ],
+      disclaimer: "First-aid elastic compression bandage for sprains and strains."
+    },
+    {
+      name: "Sterile Gauze Bandage Rolls & Pads",
+      purpose: "Absorbent Wound Dressing Material",
+      common_uses: [
+        "Covering and protecting cuts, lacerations, and burns from contamination",
+        "Absorbing wound exudate and blood"
+      ],
+      important_warnings: [
+        "Keep packaging sterile until application.",
+        "Change dressing daily or whenever damp."
+      ],
+      contraindications: [
+        "None for sterile external application"
+      ],
+      disclaimer: "Essential sterile wound dressing material."
+    },
+    {
+      name: "Moov Pain Relief Spray (Methyl Salicylate & Menthol)",
+      purpose: "Topical Counter-Irritant & Deep Muscle Analgesic",
+      common_uses: [
+        "Rapid cooling and warming relief for backache and lumbago",
+        "Muscular soreness and joint pain relief"
+      ],
+      important_warnings: [
+        "Spray from 5 cm distance on affected area. Do not rub vigorously.",
+        "Keep away from eyes, nose, and open flames."
+      ],
+      contraindications: [
+        "Broken skin, open cuts, or eczema"
+      ],
+      disclaimer: "Topical pain relief spray for muscular aches."
     }
   ],
   emergency_categories: [
