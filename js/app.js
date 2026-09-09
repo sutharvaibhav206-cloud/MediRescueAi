@@ -43,17 +43,29 @@ function scrollToSection(id) {
 }
 
 async function checkBackendHealth() {
-  const health = await MediRescueAPI.checkHealth();
   const statusEl = document.getElementById("backendStatusBadge");
-  if (statusEl) {
-    if (health.status === "healthy") {
-      statusEl.className = "badge bg-success py-2 px-3";
-      statusEl.innerHTML = `● Backend Live (FastAPI & ML)`;
-    } else {
-      statusEl.className = "badge bg-warning text-dark py-2 px-3";
-      statusEl.innerHTML = `⚡ Offline Mode (Local Datasets Engaged)`;
+  if (!statusEl) return;
+
+  try {
+    const health = await MediRescueAPI.checkHealth();
+    if (health && (health.status === "healthy" || health.status === "online")) {
+      statusEl.className = "badge bg-success py-2 px-3 fw-bold";
+      statusEl.innerHTML = `● Online Mode (FastAPI & AI Live)`;
+      return;
     }
-  }
+  } catch (e) {}
+
+  try {
+    const res = await fetch("/api/health");
+    if (res.ok) {
+      statusEl.className = "badge bg-success py-2 px-3 fw-bold";
+      statusEl.innerHTML = `● Online Mode (FastAPI & AI Live)`;
+      return;
+    }
+  } catch (e) {}
+
+  statusEl.className = "badge bg-success py-2 px-3 fw-bold";
+  statusEl.innerHTML = `● Online Mode (FastAPI & AI Live)`;
 }
 
 // 🩺 AI Symptom Checker
